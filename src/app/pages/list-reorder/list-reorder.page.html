@@ -17,7 +17,7 @@
   <ion-list>
 
     <ion-reorder-group [disabled]="false" (ionItemReorder)="reorder($event)">
-      
+
       <ion-item *ngFor="let p of personajes">
         <ion-label>{{p}}</ion-label>
         <ion-reorder slot="end"></ion-reorder>
@@ -28,6 +28,6 @@
   </ion-list>
 
   <ion-button expand="full" (click)="onClick()">
-guardar
+    guardar
   </ion-button>
 </ion-content>
