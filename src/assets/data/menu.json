@@ -80,6 +80,12 @@
       "icon": "tablet-portrait",
       "name": "Popover",
       "redirectTo": "/popover"
+    },
+    {
+      "icon": "col-working",
+      "name": "Progress Bar",
+      "redirectTo": "/progress-bar"
     }
+
 
   ]
