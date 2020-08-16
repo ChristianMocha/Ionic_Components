@@ -85,6 +85,11 @@
       "icon": "col-working",
       "name": "Progress Bar",
       "redirectTo": "/progress-bar"
+    },
+    {
+      "icon": "arrow-round-down",
+      "name": "Refresher",
+      "redirectTo": "/refresher"
     }
 
 
