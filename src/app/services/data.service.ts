@@ -18,6 +18,8 @@ export class DataService {
   getAlbumes(){
     return this.http.get<any[]>('https://jsonplaceholder.typicode.com/albums');
   }
-
+  getHeroes(){
+    return this.http.get<Componente[]>('/assets/data/071 superheroes.json');
+  }
   
 }
