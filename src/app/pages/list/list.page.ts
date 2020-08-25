@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Observable } from 'rxjs';
-import { IonList } from '@ionic/angular';
+import { IonList, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
@@ -9,25 +9,42 @@ import { IonList } from '@ionic/angular';
   styleUrls: ['./list.page.scss'],
 })
 export class ListPage implements OnInit {
-  @ViewChild('lista') lista: IonList;
-  usuario: Observable<any>;
 
-  constructor(private dataService: DataService) { }
+  @ViewChild('lista') lista: IonList;
+
+  usuarios: Observable<any>;
+
+  constructor( private dataService: DataService,
+               private toastCtrl: ToastController ) { }
 
   ngOnInit() {
-    this.usuario = this.dataService.getUsers();
+
+    this.usuarios = this.dataService.getUsers();
+
   }
 
-  favorite(user) {
-    console.log('favorite', user);
+  async presentToast( message: string) {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 2000
+    });
+    toast.present();
+  }
+
+
+  favorite( user ) {
+    // console.log('favorite', user);
+    this.presentToast('Guardó en favoritos');
     this.lista.closeSlidingItems();
   }
-  share(user) {
-    console.log('share', user);
+
+  share( user ) {
+    this.presentToast('Compartido!');
     this.lista.closeSlidingItems();
   }
-  borrar(user) {
-    console.log('borrar', user);
+
+  borrar( user ) {
+    this.presentToast('Borrado!');
     this.lista.closeSlidingItems();
   }
 

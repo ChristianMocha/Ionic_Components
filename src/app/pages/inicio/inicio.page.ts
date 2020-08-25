@@ -14,14 +14,18 @@ export class InicioPage implements OnInit {
   componentes: Observable<Componente[]>;
 
 
-  constructor(private menuCtrl: MenuController, private dataService: DataService) { }
+  constructor( private menuCtrl: MenuController,
+               private dataService: DataService ) { }
 
   ngOnInit() {
+
     this.componentes = this.dataService.getMenuOpts();
   }
-  toggleMenu(){
+
+  toggleMenu() {
     this.menuCtrl.toggle();
   }
 
 }
+
 

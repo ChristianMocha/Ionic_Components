@@ -11,25 +11,30 @@ import { Observable } from 'rxjs';
 export class SegmentPage implements OnInit {
 
   @ViewChild(IonSegment) segment: IonSegment;
+
   superHeroes: Observable<any>;
   publisher = '';
 
-  constructor(private dataService: DataService) { }
+  constructor( private dataService: DataService ) { }
 
   ngOnInit() {
-    //this.segment.value = "todos";
+    this.segment.value = 'todos';
     this.superHeroes = this.dataService.getHeroes();
   }
-  segmentChanged( event ){
+
+  segmentChanged( event ) {
+
     const valorSegmento = event.detail.value;
 
-    if (valorSegmento === 'todos') {
+    if ( valorSegmento === 'todos' ) {
       this.publisher = '';
       return;
     }
-    this.publisher = valorSegmento
+
+    this.publisher = valorSegmento;
+
     console.log(valorSegmento);
-  
+
   }
 
 }

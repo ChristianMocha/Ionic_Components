@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fab.page.scss'],
 })
 export class FabPage implements OnInit {
+
+
   data = Array(100);
 
   constructor() { }

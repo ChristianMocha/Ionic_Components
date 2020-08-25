@@ -9,22 +9,27 @@ import { PopinfoComponent } from '../../components/popinfo/popinfo.component';
 })
 export class PopoverPage implements OnInit {
 
-  constructor(private popoverCtrl: PopoverController) { }
+  constructor( private popoverCtrl: PopoverController ) { }
 
   ngOnInit() {
   }
 
   async mostrarPop( evento ) {
+
     const popover = await this.popoverCtrl.create({
       component: PopinfoComponent,
       event: evento,
       mode: 'ios',
       backdropDismiss: false
     });
+
     await popover.present();
-    /* const { data } = await popover.onDidDismiss(); se spera para cerra el modal*/ 
-    const { data } = await popover.onWillDismiss(); //se lanza de una
-    console.log('Padre:', data);
+
+    // const { data } = await popover.onDidDismiss();
+    const { data } = await popover.onWillDismiss();
+
+    console.log('Padre:', data );
+
   }
 
 }

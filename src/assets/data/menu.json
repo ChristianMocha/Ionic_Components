@@ -15,11 +15,10 @@
       "redirectTo": "/avatar"
     },
     {
-      "icon": "radop-button-on",
+      "icon": "radio-button-on",
       "name": "Botones y router",
       "redirectTo": "/botones"
-    }
-    ,
+    },
     {
       "icon": "card",
       "name": "Cards",
@@ -27,7 +26,7 @@
     },
     {
       "icon": "checkmark-circle-outline",
-      "name": "CheckBox",
+      "name": "Checkbox",
       "redirectTo": "/check"
     },
     {
@@ -52,18 +51,17 @@
     },
     {
       "icon": "hammer",
-      "name": "Input -Forms",
+      "name": "Input - Forms",
       "redirectTo": "/input"
     },
     {
       "icon": "list",
       "name": "Listas - Sliding",
       "redirectTo": "/list"
-    }
-    ,
+    },
     {
       "icon": "reorder",
-      "name": "Lista - Reorder",
+      "name": "Listas - Reorder",
       "redirectTo": "/list-reorder"
     },
     {
@@ -82,8 +80,8 @@
       "redirectTo": "/popover"
     },
     {
-      "icon": "col-working",
-      "name": "Progress Bar",
+      "icon": "code-working",
+      "name": "ProgressBar y Range",
       "redirectTo": "/progress-bar"
     },
     {
@@ -93,19 +91,23 @@
     },
     {
       "icon": "search",
-      "name": "SearchBar",
+      "name": "Searchbar",
       "redirectTo": "/searchbar"
     },
     {
       "icon": "copy",
-      "name": "Segement",
+      "name": "Segment",
       "redirectTo": "/segment"
     },
     {
       "icon": "albums",
       "name": "Slides",
       "redirectTo": "/slides"
+    },
+    {
+      "icon": "cog",
+      "name": "Tabs",
+      "redirectTo": "/tabs/account"
     }
-
-
   ]
+  

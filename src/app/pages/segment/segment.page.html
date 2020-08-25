@@ -1,9 +1,11 @@
 <app-header titulo="Segment"></app-header>
 
 <ion-toolbar>
-  <!-- Default Segment -->
-  <ion-segment (ionChange)="segmentChanged($event)" color="youtube">
 
+  <!-- Default Segment -->
+  <ion-segment (ionChange)="segmentChanged($event)"
+               color="tertiary">
+   
     <ion-segment-button value="todos">
       <ion-label>Todos</ion-label>
     </ion-segment-button>
@@ -16,27 +18,34 @@
       <ion-label>Marvel Comics</ion-label>
     </ion-segment-button>
 
-
   </ion-segment>
+
 </ion-toolbar>
+
 
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let h of (superHeroes | async) | filtro: publisher: 'publisher'" class="animated fadeIn fast ">
+  
+    <ion-item *ngFor="let heroe of (superHeroes | async) | filtro: publisher:'publisher'"
+              class="animated fadeIn fast">
       <ion-label>
-        <h3>{{h.superhero}}</h3>
-        <small>{{h.alter_ego}}</small>
-        <p>{{h.first_appearance}}</p>
+        <h3>{{ heroe.superhero }} <small> {{ heroe.alter_ego }} </small></h3>
+        <p>
+          {{ heroe.first_appearance }}
+        </p>
       </ion-label>
-      <ion-label slot="end"text-right>
-        {{h.publisher}}
+      <ion-label slot="end" text-right>
+        {{ heroe.publisher }}
       </ion-label>
     </ion-item>
+  
   </ion-list>
 
-  <ion-list *ngIf="(superHeroes | async) === null">
-    <ion-item *ngFor="let i of [1,1,1,1,1,1,1,1,1,1,1,1,1]" class="animated flash slow infinite">
+  <ion-list *ngIf="(superHeroes | async) === null ">
+
+    <ion-item *ngFor="let item of [1,1,1,1,1,1,1,1,1,1]"
+              class="animated flash slow infinite">
       <ion-label>
         <h3>
           <ion-skeleton-text width="70%"></ion-skeleton-text>
@@ -49,5 +58,8 @@
         <ion-skeleton-text width="40px"></ion-skeleton-text>
       </ion-label>
     </ion-item>
+
   </ion-list>
+
+
 </ion-content>

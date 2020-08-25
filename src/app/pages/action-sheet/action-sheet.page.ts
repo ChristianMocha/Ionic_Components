@@ -13,12 +13,10 @@ export class ActionSheetPage implements OnInit {
   ngOnInit() {
   }
 
-
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'Albums',
       backdropDismiss: false,
-      cssClass: 'my-custom-class',
       buttons: [{
         text: 'Delete',
         role: 'destructive',
@@ -35,7 +33,7 @@ export class ActionSheetPage implements OnInit {
         }
       }, {
         text: 'Play (open modal)',
-        icon: 'caret-forward-circle',
+        icon: 'arrow-dropright-circle',
         handler: () => {
           console.log('Play clicked');
         }
@@ -54,6 +52,7 @@ export class ActionSheetPage implements OnInit {
         }
       }]
     });
+
     await actionSheet.present();
   }
 

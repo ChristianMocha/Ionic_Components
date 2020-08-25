@@ -7,21 +7,26 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./modal-info.page.scss'],
 })
 export class ModalInfoPage implements OnInit {
+
   @Input() nombre;
   @Input() pais;
 
-  constructor(private modaCtrl: ModalController) { }
+  constructor( private modalCtrl: ModalController ) { }
 
   ngOnInit() {
   }
-  salirSinArgumentos(){
-    this.modaCtrl.dismiss();
+
+  salirSinArgumentos() {
+    this.modalCtrl.dismiss();
   }
-  salirConArgumentos(){
-    this.modaCtrl.dismiss({
-      nombre: 'Criss',
-      pais: 'Ecuador'
+
+  salirConArgumentos() {
+
+    this.modalCtrl.dismiss({
+      nombre: 'Felipe',
+      pais: 'España'
     });
+
   }
 
 }

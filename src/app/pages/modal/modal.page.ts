@@ -9,23 +9,27 @@ import { ModalInfoPage } from '../modal-info/modal-info.page';
 })
 export class ModalPage implements OnInit {
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor( private modalCtrl: ModalController ) { }
 
   ngOnInit() {
   }
+
   async abrirModal() {
+
     const modal = await this.modalCtrl.create({
       component: ModalInfoPage,
       componentProps: {
-        'nombre': 'Criss',
-        'pais': 'Ecuador'
-
+        nombre: 'Fernando',
+        pais: 'Costa Rica'
       }
     });
+
     await modal.present();
 
     const { data } = await modal.onDidDismiss();
-    console.log('retorno del moda', data);
+
+    console.log('Retorno del modal', data );
+
   }
 
 }

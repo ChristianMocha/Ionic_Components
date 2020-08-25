@@ -7,7 +7,8 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./slides.page.scss'],
 })
 export class SlidesPage implements OnInit {
-  ocultar= '';
+
+  ocultar = '';
 
   slides: { img: string, titulo: string, desc: string }[] = [
     {
@@ -32,14 +33,16 @@ export class SlidesPage implements OnInit {
     }
   ];
 
-  constructor( private navCtrl: NavController) { }
+  constructor( private navCtrl: NavController ) { }
 
   ngOnInit() {
   }
 
-  onClick(){
-    this.ocultar = 'animated faceOut fast';
-    this.navCtrl.navigateBack("/");
+  onClick() {
+
+    this.ocultar = 'animated fadeOut fast';
+    this.navCtrl.navigateBack('/');
+
   }
 
 }
